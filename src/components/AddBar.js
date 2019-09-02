@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { addTodo } from "../actions";
+import { connect } from "react-redux";
 import shortid from "shortid";
 
 class AddBar extends Component {
@@ -8,7 +10,7 @@ class AddBar extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    this.props.onSubmit({
+    this.props.addTodo({
       id: shortid.generate(),
       content: this.state.content,
       completed: false
@@ -42,4 +44,7 @@ class AddBar extends Component {
   }
 }
 
-export default AddBar;
+export default connect(
+  null,
+  { addTodo }
+)(AddBar);

@@ -52,7 +52,7 @@ class TodoList extends React.Component {
 
     return (
       <div>
-        <AddBar onSubmit={addTodo} />
+        {/* <AddBar onSubmit={addTodo} /> */}
         {todoList}
         {todoLeft}
         <div>
