@@ -1,10 +1,10 @@
 import * as types from "./types";
-
 let todoId = 0;
 export const addTodo = content => {
   return {
     type: types.ADD_TODO,
     content,
+    completed: false,
     id: todoId++
   };
 };

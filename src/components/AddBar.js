@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { addTodo } from "../actions";
 import { connect } from "react-redux";
-import shortid from "shortid";
 
 class AddBar extends Component {
   state = {
@@ -10,11 +9,7 @@ class AddBar extends Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    this.props.addTodo({
-      // id: shortid.generate(),
-      content: this.state.content,
-      completed: false
-    });
+    this.props.addTodo(this.state.content);
     this.setState({
       content: ""
     });

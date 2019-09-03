@@ -34,12 +34,14 @@ class TodoList extends React.Component {
             content={todo.content}
             toggleComplete={() => toggleComplete(todo.id)}
             handleDelete={() => handleDelete(todo.id)}
-            // todo={todo}
+            todo={todo}
           />
         );
       })
     ) : (
-      <p>You have no todo left</p>
+      <p style={{ color: "red", textAlign: "center", fontSize: "15px" }}>
+        You have no todo left
+      </p>
     );
 
     const todoLeft =
@@ -54,19 +56,19 @@ class TodoList extends React.Component {
         {todoLeft}
         <div>
           <button
-            className="ui inverted pink basic button"
+            className="ui pink button"
             onClick={() => handleShow(showTodos.SHOW_ALL)}
           >
             ALL
           </button>
           <button
-            className="ui inverted pink basic button"
+            className="ui pink button"
             onClick={() => handleShow(showTodos.SHOW_ACTIVE)}
           >
             ACTIVE
           </button>
           <button
-            className="ui inverted pink basic button"
+            className="ui pink button"
             onClick={() => handleShow(showTodos.SHOW_COMPLETED)}
           >
             COMPLETED
