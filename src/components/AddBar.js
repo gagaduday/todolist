@@ -11,7 +11,7 @@ class AddBar extends Component {
   onFormSubmit = event => {
     event.preventDefault();
     this.props.addTodo({
-      id: shortid.generate(),
+      // id: shortid.generate(),
       content: this.state.content,
       completed: false
     });

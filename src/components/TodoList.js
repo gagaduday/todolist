@@ -1,8 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
-import AddBar from "./AddBar";
 import {
-  addTodo,
   handleDelete,
   toggleComplete,
   handleShow,
@@ -13,7 +11,6 @@ import { connect } from "react-redux";
 class TodoList extends React.Component {
   render() {
     const {
-      addTodo,
       handleDelete,
       toggleComplete,
       handleShow,
@@ -37,7 +34,7 @@ class TodoList extends React.Component {
             content={todo.content}
             toggleComplete={() => toggleComplete(todo.id)}
             handleDelete={() => handleDelete(todo.id)}
-            todo={todo}
+            // todo={todo}
           />
         );
       })
@@ -56,11 +53,22 @@ class TodoList extends React.Component {
         {todoList}
         {todoLeft}
         <div>
-          <button onClick={() => handleShow(showTodos.SHOW_ALL)}>ALL</button>
-          <button onClick={() => handleShow(showTodos.SHOW_ACTIVE)}>
+          <button
+            className="ui inverted pink basic button"
+            onClick={() => handleShow(showTodos.SHOW_ALL)}
+          >
+            ALL
+          </button>
+          <button
+            className="ui inverted pink basic button"
+            onClick={() => handleShow(showTodos.SHOW_ACTIVE)}
+          >
             ACTIVE
           </button>
-          <button onClick={() => handleShow(showTodos.SHOW_COMPLETED)}>
+          <button
+            className="ui inverted pink basic button"
+            onClick={() => handleShow(showTodos.SHOW_COMPLETED)}
+          >
             COMPLETED
           </button>
         </div>
@@ -78,5 +86,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { addTodo, handleDelete, toggleComplete, handleShow, showTodos }
+  { handleDelete, toggleComplete, handleShow, showTodos }
 )(TodoList);
