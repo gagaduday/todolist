@@ -3,6 +3,7 @@ import Todo from "./Todo";
 import {
   handleDelete,
   toggleComplete,
+  handleEdit,
   handleShow,
   showTodos
 } from "../actions";
@@ -46,12 +47,13 @@ class TodoList extends React.Component {
 
     const todoLeft =
       todoToShow === showTodos.SHOW_ALL ? (
-        <div>todos left: {todos.filter(todo => !todo.completed).length}</div>
+        <div style={{ marginBottom: "12px" }}>
+          todos left: {todos.filter(todo => !todo.completed).length}
+        </div>
       ) : null;
 
     return (
       <div>
-        {/* <AddBar onSubmit={addTodo} /> */}
         {todoList}
         {todoLeft}
         <div>

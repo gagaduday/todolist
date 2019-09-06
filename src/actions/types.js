@@ -13,3 +13,5 @@ export const TOGGLE_COMPLETE = "TOGGLE_COMPLETE";
 export const HANDLE_DELETE = "HANDLE_DELETE";
 
 export const HANDLE_SHOW = "HANDLE_SHOW";
+
+export const HANDLE_EDIT = "HANDLE_EDIT";

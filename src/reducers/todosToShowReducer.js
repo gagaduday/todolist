@@ -1,4 +1,4 @@
-import { HANDLE_SHOW, SHOW_ALL } from "../actions/types";
+import { HANDLE_SHOW } from "../actions/types";
 import { showTodos } from "../actions";
 
 const todoToShowReducer = (state = showTodos.SHOW_ALL, action) => {

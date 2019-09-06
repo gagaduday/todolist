@@ -1,4 +1,5 @@
 import * as types from "./types";
+
 let todoId = 0;
 export const addTodo = content => {
   return {
@@ -6,6 +7,14 @@ export const addTodo = content => {
     content,
     completed: false,
     id: todoId++
+  };
+};
+
+export const handleEdit = (id, content) => {
+  return {
+    type: types.HANDLE_EDIT,
+    id,
+    content
   };
 };
 

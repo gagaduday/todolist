@@ -14,9 +14,11 @@ body {
 
 .todo-content-completed {
   color: black;
+  margin: 8px 0 0 20px;
 }
 
 .todo-content-incomplete {
   color: grey;
   text-decoration: line-through;
+  margin: 8px 0 0 20px;
 }

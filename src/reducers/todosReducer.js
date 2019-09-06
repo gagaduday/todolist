@@ -13,6 +13,10 @@ const todosReducer = (state = [], action) => {
       );
     case types.HANDLE_DELETE:
       return state.filter(todo => todo.id !== action.id);
+    case types.HANDLE_EDIT:
+      return state.map(todo =>
+        todo.id === action.id ? { ...todo, content: action.content } : todo
+      );
     default:
       return state;
   }
